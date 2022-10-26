@@ -40,7 +40,7 @@ minikube addons list
 
 Внешний IP адрес кластера можно узнать при помощи команды
 
-kubectl service ingress-nginx-controller -n ingress-nginx
+minikube service ingress-nginx-controller -n ingress-nginx
 
 или
 
