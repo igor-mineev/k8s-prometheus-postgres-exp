@@ -31,8 +31,22 @@ kubectl version
 
 
 После запуска minikube надо включить дополнение Ingress (проксирование траффика):
+
 minikube addons enable ingress
+
 Проверить наличие дополнения можно командой
+
 minikube addons list
+
+Внешний IP адрес кластера можно узнать при помощи команды
+
+kubectl service ingress-nginx-controller -n ingress-nginx
+
+или
+
+minikube ip
+
+
+
 
 
