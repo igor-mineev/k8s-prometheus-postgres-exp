@@ -46,7 +46,9 @@ minikube service ingress-nginx-controller -n ingress-nginx
 
 minikube ip
 
+Кластер подготовлен, можно перейти к установке стека для мониторинга и самой базы данных.
 
+Для начала надо создать namespace, в котором будет установлен стек 
 
 
 
