@@ -60,6 +60,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 helm repo update 
 
-![image](https://user-images.githubusercontent.com/68746298/199480543-9ef26dda-d0cf-4a3a-8196-8b6efd0c84a2.png)
+![image](https://user-images.githubusercontent.com/68746298/199480715-90ac7677-4ce4-4ad8-a702-218f4992bc8c.png)
+
 
 
