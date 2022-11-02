@@ -106,11 +106,43 @@ https://hub.docker.com/_/postgres/tags
 
 docker pull postgres:14.5
 
-После этого можно стартовать контейенер с базой  контейнера с базой 
+После этого можно стартовать контейенер с базой   
 
 docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v e:\postgresql\data:/var/lib/postgresql/data -d postgres:14.5
 
 В консоли после старта базы можно увидеть:
+
+![image](https://user-images.githubusercontent.com/68746298/199548324-eab11de9-f22e-467e-8ba9-5f0ea793255b.png)
+
+Можно переходить к настройкам стека для мониторинга. В графическом интерфейсе grafana (IP адрес полученный командой "minikube IP") надо ввести имя пользователя/пароль (admin/prom-operator)
+
+https://IP/grafana
+
+![image](https://user-images.githubusercontent.com/68746298/199550497-34bfac51-b0e8-44de-843b-6a6c51cafe35.png)
+
+Необходимо добавить источник данных Prometheus:
+
+![image](https://user-images.githubusercontent.com/68746298/199551627-1695a3c8-3f4a-4e60-b7eb-f99f42eee358.png)
+
+В строке HTTP URL надо ввести имя сервиса (хоста), где развернут Prometheus 
+
+http://prometheus-kube-prometheus-prometheus:9090
+
+![image](https://user-images.githubusercontent.com/68746298/199554416-a021c2dc-3bba-4da0-82aa-8bafb50ba709.png)
+
+
+Проверить соединение и сохранить настройки. 
+
+Имя сервиса можно получить командой  
+
+kubectl get services --namespace monitoring 
+
+![image](https://user-images.githubusercontent.com/68746298/199555177-6f99f005-83ea-4039-a1a5-c6339681468d.png)
+
+
+
+
+
 
 
 
