@@ -62,5 +62,29 @@ helm repo update
 
 ![image](https://user-images.githubusercontent.com/68746298/199480715-90ac7677-4ce4-4ad8-a702-218f4992bc8c.png)
 
+Далее можно переходить к установке стека, предварительно следует скопировать файл prometheus_stack.yml, где хранится описание стека на локальный хост
+
+helm install   --namespace monitoring   -f prometheus_stack.yml   prometheus prometheus-community/kube-prometheus-stack
+
+Для проверки состояния установленных компонент можно посмотреть на содержимое пода и список сервисов (здесь выборка происходит по всем пространствам имен). 
+
+kubectl get pods -A 
+kubectl get services -A
+
+
+![image](https://user-images.githubusercontent.com/68746298/199483832-29d2b6a2-ab73-43c7-bea9-dd76ca6361ca.png)
+
+Теперь стек готов для того, чтобы принимать и обрабатывать метрики. Осталось организовать доставку данных. Будем использовать технологию экспортеров, в нашем случае это будет prometheus_db_exporter. Prometheus может сам обнаруживать и закачиать метрики, но лучше помочь ему в этом. При установке db_exporter надо указать метку, по которой Promеtheus обнаружит источник данных, для этого следует определить метку монитора сервиса Prometheus. Получим опмсание в виде xml
+
+kubectl get prometheus -n monitoring -o yaml
+
+![image](https://user-images.githubusercontent.com/68746298/199534271-ee3b65fc-0544-442e-bae9-67f4c467aabc.png)
+
+
+
+
+
+
+
 
 
