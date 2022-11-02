@@ -139,6 +139,25 @@ kubectl get services --namespace monitoring
 
 ![image](https://user-images.githubusercontent.com/68746298/199555177-6f99f005-83ea-4039-a1a5-c6339681468d.png)
 
+Осталось только импортировать соответвующий dashboard для отображения метрик,которые можно найти -
+
+https://grafana.com/grafana/dashboards/?search=postgres
+
+Далее неоходимо импортировать понравившийся
+
+![image](https://user-images.githubusercontent.com/68746298/199558647-ec302bfc-bc6b-4e1a-8713-33a7fe13eb46.png)
+
+указав соответствующий ID
+
+![image](https://user-images.githubusercontent.com/68746298/199559247-b80a6c72-167e-423c-86c0-314457044edc.png)
+
+
+![image](https://user-images.githubusercontent.com/68746298/199579282-54e2f54c-24bd-4817-ada1-82eaff2cf718.png)
+
+
+
+
+
 
 
 
