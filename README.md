@@ -50,5 +50,16 @@ minikube ip
 
 Для начала надо создать namespace, в котором будет установлен стек 
 
+kubectl create namespace monitoring 
+
+Перед установкой стека для мониторинга следует убедиться в том, что репозиторий где хранятся сценарии установки подключен
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+и описание загружено в локальный сервер.
+
+helm repo update 
+
+![image](https://user-images.githubusercontent.com/68746298/199480543-9ef26dda-d0cf-4a3a-8196-8b6efd0c84a2.png)
 
 
