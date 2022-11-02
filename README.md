@@ -90,9 +90,33 @@ kubectl get prometheus -n monitoring -o yaml
 
 ![image](https://user-images.githubusercontent.com/68746298/199539808-b3550709-f82e-483b-b7bc-0f217a1a4ea3.png)
 
-В этом же файле находится описание самих метрик, а также процесс их получения (SQL запрос), напимер:
+В этом же файле находится описание самих метрик, а также процесс их получения (SQL запрос):
 
 ![image](https://user-images.githubusercontent.com/68746298/199540580-7670ed42-c915-4c77-9867-75e92fff9e3b.png)
+
+Команда install устанавливает экспортер, update обновляет установку, например, после изменения файла values.yml.
+
+helm install my-prometheus-postgres-exporter --namespace monitoring -f values.yml  prometheus-community/prometheus-postgres-exporter --version 3.1.3
+
+Остается только установить и стартовать базу данных, если нет уже готовой. Образ базы определенной  версии можно взять здесь :
+
+https://hub.docker.com/_/postgres/tags
+
+Для этого следует выполнить команду, в качестве tag указывается необходимая версия базы данных :
+
+docker pull postgres:14.5
+
+После этого можно стартовать контейенер с базой  контейнера с базой 
+
+docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v e:\postgresql\data:/var/lib/postgresql/data -d postgres:14.5
+
+В консоли после старта базы можно увидеть:
+
+
+
+
+
+
 
 
 
