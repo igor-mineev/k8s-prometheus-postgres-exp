@@ -159,26 +159,31 @@ https://grafana.com/grafana/dashboards/?search=postgres
 
 Осталось открыть импортированный Dashboard
 
-
 ![image](https://user-images.githubusercontent.com/68746298/199579282-54e2f54c-24bd-4817-ada1-82eaff2cf718.png)
 
-Стоит обратить внимание на источник данных (база данных) и источник метрик 
+Дополнительные упражнения )
 
-![image](https://user-images.githubusercontent.com/68746298/199668028-062994db-a217-42c5-a066-06d4a8d96f97.png)
-
-kubectl get po -A
-
-![image](https://user-images.githubusercontent.com/68746298/199672509-d018ece2-7d5a-43b9-b6e4-65974d2d245f.png)
+Следует обратить внимание на номера портов подов, они будут использованы при переадресации запросов к сервисам
 
  get svc -A
  
 ![image](https://user-images.githubusercontent.com/68746298/199672683-bfb0c30a-590a-446d-9009-131dc157bc13.png)
 
-kubectl port-forward  prometheus-prometheus-kube-prometheus-prometheus-0 -n monitoring 9090:9090
+kubectl port-forward  service/prometheus-kube-prometheus-prometheus -n monitoring 9090:9090
+
+Можно ознакомиться с интерфейсом Prometheus
 
 http://localhost:9090/targets
 
 ![image](https://user-images.githubusercontent.com/68746298/199672311-b164543d-1e91-4be7-b055-d7986a68b2ea.png)
+
+port-forward  service/my-prometheus-postgres-exporter 8080:80 -n monitoring
+
+И метриками экспортера
+
+http://localhost:8080/metrics
+
+![image](https://user-images.githubusercontent.com/68746298/199683952-abc94c09-225e-4f9c-8494-4a9e236b9700.png)
 
 
 
