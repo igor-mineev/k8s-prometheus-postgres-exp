@@ -141,18 +141,48 @@ kubectl get services --namespace monitoring
 
 Осталось только импортировать соответвующий dashboard для отображения метрик,которые можно найти -
 
+
 https://grafana.com/grafana/dashboards/?search=postgres
 
-Далее неоходимо импортировать понравившийся
+Далее неоходимо импортировать понравившийся 
 
-![image](https://user-images.githubusercontent.com/68746298/199558647-ec302bfc-bc6b-4e1a-8713-33a7fe13eb46.png)
+![image](https://user-images.githubusercontent.com/68746298/197983168-516379ab-d194-4aef-b705-f674987db186.png)
 
-указав соответствующий ID
+указав соответсвующий ID 
 
-![image](https://user-images.githubusercontent.com/68746298/199559247-b80a6c72-167e-423c-86c0-314457044edc.png)
+![image](https://user-images.githubusercontent.com/68746298/197991358-f3c3a26d-8e52-40fe-b815-b21a475ad3ab.png)
+
+и источник данных.
+
+![image](https://user-images.githubusercontent.com/68746298/199667219-9a8f827b-c5eb-45b0-ad61-ed6175707b40.png)
+
+
+Осталось открыть импортированный Dashboard
 
 
 ![image](https://user-images.githubusercontent.com/68746298/199579282-54e2f54c-24bd-4817-ada1-82eaff2cf718.png)
+
+Стоит обратить внимание на источник данных (база данных) и источник метрик 
+
+![image](https://user-images.githubusercontent.com/68746298/199668028-062994db-a217-42c5-a066-06d4a8d96f97.png)
+
+kubectl get po -A
+
+![image](https://user-images.githubusercontent.com/68746298/199672509-d018ece2-7d5a-43b9-b6e4-65974d2d245f.png)
+
+ get svc -A
+ 
+![image](https://user-images.githubusercontent.com/68746298/199672683-bfb0c30a-590a-446d-9009-131dc157bc13.png)
+
+kubectl port-forward  prometheus-prometheus-kube-prometheus-prometheus-0 -n monitoring 9090:9090
+
+http://localhost:9090/targets
+
+![image](https://user-images.githubusercontent.com/68746298/199672311-b164543d-1e91-4be7-b055-d7986a68b2ea.png)
+
+
+
+
 
 
 
