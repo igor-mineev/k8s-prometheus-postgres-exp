@@ -177,7 +177,7 @@ http://localhost:9090/targets
 
 ![image](https://user-images.githubusercontent.com/68746298/199672311-b164543d-1e91-4be7-b055-d7986a68b2ea.png)
 
-port-forward  service/my-prometheus-postgres-exporter 8080:80 -n monitoring
+kubectl port-forward  service/my-prometheus-postgres-exporter 8080:80 -n monitoring
 
 И метриками экспортера
 
